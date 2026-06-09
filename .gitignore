@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Models (large binary files — regenerate with train_models.py)
+models/*.pkl
+models/*.pt
+models/*.onnx
+models/*.engine
+!models/.gitkeep
+
+# YOLOv8 weights (auto-downloaded)
+yolov8n.pt
+*.pt
+*.weights
+
+# Datasets and captures (proprietary / too large)
+datasets/
+data/
+captures/
+*.wav
+*.raw
+*.bin
+*.csv
+
+# Docs / build artifacts
+docs/*.png
+docs/*.pdf
+!docs/training_report.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+*.key
+api_keys.txt
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# OS
+*.orig
+*.bak

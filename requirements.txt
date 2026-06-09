@@ -1,0 +1,48 @@
+# DragonShield Counter-UAS System
+# Core ML & Signal Processing
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.2.0
+pandas>=1.5.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+
+# Deep Learning (install separately if GPU available)
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Computer Vision
+ultralytics>=8.0.0       # YOLOv8
+opencv-python>=4.7.0
+
+# Audio Processing
+librosa>=0.10.0
+soundfile>=0.12.0
+pyaudio>=0.2.13          # live mic input (needs portaudio)
+
+# RF Signal Processing
+# pyrtlsdr>=0.2.92       # RTL-SDR hardware (uncomment if dongle present)
+# gnuradio                # install via apt: sudo apt install gnuradio
+
+# API & Dashboard
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+websockets>=11.0
+python-multipart>=0.0.6
+aiofiles>=23.1.0
+
+# Edge Deployment
+# onnx>=1.14.0           # uncomment for ONNX export
+# onnxruntime>=1.15.0
+
+# Hardware (Jetson / Raspberry Pi)
+# RPi.GPIO               # Raspberry Pi GPIO
+# smbus2                 # I2C sensor comms
+
+# Utilities
+Pillow>=9.5.0
+tqdm>=4.65.0
+pyyaml>=6.0
+python-dotenv>=1.0.0
+loguru>=0.7.0

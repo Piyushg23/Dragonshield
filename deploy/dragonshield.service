@@ -1,0 +1,19 @@
+[Unit]
+Description=DragonShield Counter-UAS Detection System
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+User=dragonshield
+WorkingDirectory=/home/claude/dragonshield
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/bin/python3 /home/claude/dragonshield/src/dashboard/server.py
+StandardOutput=journal
+StandardError=journal
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

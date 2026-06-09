@@ -1,0 +1,43 @@
+{
+  "project": "DragonShield Counter-UAS System",
+  "version": "1.0.0",
+  "deployment_target": "jetson",
+  "deployment_date": "2026-06-05",
+  "models": {
+    "rf_classifier": {
+      "file": "models/rf_model.pkl",
+      "onnx": "deploy/rf_model.onnx",
+      "features": 20,
+      "classes": 8
+    },
+    "audio_classifier": {
+      "file": "models/audio_model.pkl",
+      "onnx": "deploy/audio_model.onnx",
+      "features": 71,
+      "classes": 7
+    },
+    "visual_tracker": {
+      "file": "yolov8n.pt",
+      "trt_engine": "deploy/yolov8n.engine",
+      "onnx": null
+    }
+  },
+  "hardware": {
+    "compute": "NVIDIA Jetson Nano 4GB",
+    "rf": "RTL-SDR Blog V3",
+    "audio": "USB omnidirectional microphone",
+    "camera": "Raspberry Pi Camera v2 or USB webcam",
+    "gpio_alerts": true,
+    "mavlink": true
+  },
+  "performance_targets": {
+    "end_to_end_latency_ms": 90,
+    "update_rate_hz": 2,
+    "false_alarm_rate": "<1 per hour in benign environment"
+  },
+  "network": {
+    "dashboard_port": 8000,
+    "mavlink_port": 14550,
+    "websocket": "ws://localhost:8000/ws"
+  }
+}

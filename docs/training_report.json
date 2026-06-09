@@ -1,0 +1,62 @@
+{
+  "project": "DragonShield Counter-UAS System",
+  "version": "1.0.0",
+  "training_date": "2026-06-04 18:16:55",
+  "modules": {
+    "rf_classifier": {
+      "model": "GradientBoostingClassifier",
+      "n_classes": 8,
+      "classes": [
+        "BACKGROUND",
+        "DJI_PHANTOM",
+        "DJI_MINI",
+        "DJI_FPV",
+        "GENERIC_RC_2400",
+        "FPV_VIDEO_5800",
+        "WIFI_DRONE",
+        "MILITARY_SUSPECT"
+      ],
+      "cv_accuracy": 0.99875,
+      "features": 20,
+      "model_file": "models/rf_model.pkl"
+    },
+    "audio_classifier": {
+      "model": "MLPClassifier (256-128-64)",
+      "n_classes": 7,
+      "classes": [
+        "BACKGROUND",
+        "QUADCOPTER_SMALL",
+        "QUADCOPTER_LARGE",
+        "HEXACOPTER",
+        "FPV_RACING",
+        "FIXED_WING_UAV",
+        "HELICOPTER"
+      ],
+      "accuracy": 0.9857142857142858,
+      "features": 71,
+      "model_file": "models/audio_model.pkl"
+    },
+    "visual_tracker": {
+      "model": "YOLOv8n + Kalman Multi-Object Tracker",
+      "fallback": "MOG2 Background Subtraction",
+      "model_file": "yolov8n.pt (auto-download)"
+    },
+    "sensor_fusion": {
+      "method": "Confidence-weighted Bayesian fusion + EMA",
+      "weights": {
+        "RF": 0.4,
+        "AUDIO": 0.25,
+        "VISUAL": 0.35
+      },
+      "false_positive_filter": "3/5 frame majority vote"
+    }
+  },
+  "hardware_targets": [
+    "NVIDIA Jetson Nano (primary edge device)",
+    "Raspberry Pi 4 (lightweight deployment)",
+    "Desktop GPU (development/training)"
+  ],
+  "rf_hardware": "RTL-SDR Blog V3 (~\u20b92000) \u2014 2.4/5.8 GHz",
+  "audio_hardware": "USB microphone or lapel mic",
+  "visual_hardware": "USB webcam / Pi Camera v2 / IP camera (RTSP)"
+}
