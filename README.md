@@ -10,7 +10,7 @@
 [![OpenCV](https://img.shields.io/badge/OpenCV-MOG2%20%2B%20Kalman-5C3EE8?logo=opencv)](https://opencv.org)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-*Built in Bharat. Built for Bharat. Ready for the World.*
+
 
 </div>
 
@@ -226,14 +226,14 @@ Any PC / laptop with Python 3.10+. No hardware required. All three sensors run t
 
 ### Recommended — Full deployment
 
-| Component | Model | Approx. cost |
-|---|---|---|
-| Edge compute | NVIDIA Jetson Nano 4 GB | ₹15,000 |
+| Component | Model |
+|---|---|
+| Edge compute | NVIDIA Jetson Nano 4 GB |
 | RF receiver | RTL-SDR Blog V3 | ₹2,000 |
-| Antenna | Dual-band 2.4 / 5.8 GHz patch | ₹800 |
-| Microphone | USB omnidirectional | ₹1,500 |
-| Camera | Raspberry Pi Camera v2 or USB webcam | ₹2,500 |
-| **Total** | | **~₹21,800** |
+| Antenna | Dual-band 2.4 / 5.8 GHz patch | 
+| Microphone | USB omnidirectional | 
+| Camera | Raspberry Pi Camera v2 or USB webcam | 
+
 
 ### Enabling real hardware
 
